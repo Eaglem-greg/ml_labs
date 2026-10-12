@@ -53,9 +53,15 @@ class Metrics:
         return f'{self.data_report}'
 
     def __str__(self):
-        return "MAE: {MAE}, MSE: {MSE}, R2: {R2}".format(**self.data_report)
+        _str = ''
+        for i in self.data_report.keys():
+            _str += f'{i}: {self.data_report[i]}' + ' '
+        return _str
 
     def __repr__(self):
-        return "MAE: {MAE:.4f}, MSE: {MSE:.4f}, R2: {R2:.4f}".format(**self.data_report)
+        _str = ''
+        for i in self.data_report.keys():
+            _str += f'{i}: {self.data_report[i]}' + ' '
+        return _str
     
 
