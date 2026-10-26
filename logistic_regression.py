@@ -55,13 +55,11 @@ class Metrics:
         return self.tp / denominator
 
     def precision(self):
-        true_positive = np.sum((self.y_true == 1) & (self.y_pred == 1))
-        false_positive = np.sum((self.y_true == 0) & (self.y_pred == 1))
-        denominator = true_positive + false_positive
+        denominator = self.tp + self.fp
         if denominator == 0:
             return 0.0
 
-        return true_positive / denominator
+        return self.tp / denominator
 
     def f_score(self):
         precision = self.precision()
