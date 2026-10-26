@@ -169,14 +169,3 @@ class SVM:
             return self.classes[class_indices]
         return values
 
-    def score(self, X, y):
-        y = np.asarray(y)
-        predictions = self.predict(X)
-
-        if self.task == "classification":
-            return np.mean(predictions == y)
-
-        residual_sum = np.sum((y - predictions) ** 2)
-        total_sum = np.sum((y - np.mean(y)) ** 2)
-        return 1.0 - residual_sum / total_sum
-
