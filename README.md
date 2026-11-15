@@ -7,6 +7,10 @@
 ```text
 ml_labs_repo/
 ├── labs/
+│   ├── 00_numpy_derivatives/
+│   │   ├── README.md
+│   │   ├── derivative_visualization.png
+│   │   └── derivatives_and_numpy.ipynb
 │   ├── 01_eda_online_retail/
 │   │   ├── data/
 │   │   └── eda.ipynb
