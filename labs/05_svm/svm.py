@@ -27,6 +27,8 @@ class SVM:
         self.scale = np.where(self.scale == 0, 1.0, self.scale)
 
     def transform(self, X):
+        if self.mean is None or self.scale is None:
+            self.fit_scaler(X)
         if self.standardize:
             return (X - self.mean) / self.scale
         return X
